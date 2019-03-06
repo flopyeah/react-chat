@@ -1,0 +1,328 @@
+/* ----------------------------
+	Typo
+---------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body, .box > *, textarea, input {
+	font-family: 'Roboto', sans-serif;
+	color: #1d1d1d;
+	overflow: hidden;
+}
+
+/* ----------------------------
+	STRUCTURE
+---------------------------- */
+html {
+  box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+
+}
+
+.connexionBox {
+	background-color: #eceff1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.connexion {
+	max-width: 500px;
+	font-size: 24px;
+}
+.connexion > * {
+	width: 100%;
+}
+.connexion > input {
+	box-sizing: border-box;
+	font-size: 24px;
+	padding: 5px;
+	border: 5px solid #2196F3;
+	border-width: 0 0 5px 0;
+	outline: none;
+}
+.chat-box {
+	background-color: #eceff1;
+}
+.box {
+	margin: auto;
+	display:flex;
+	justify-content: center;
+ 	flex-wrap: wrap;
+ 	align-items: flex-end;
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.20);
+}
+
+.box > * {
+	width: 100%;
+}
+
+header {
+	height: 60px;
+	text-align: center;
+	padding: 12px;
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.20);
+	z-index: 100;
+	background: #2196F3;
+	color: #fff;
+}
+
+header h1 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+/* ----------------------------
+	MESSAGES
+---------------------------- */
+
+.messages {
+	flex: 1 1 100%;
+	/*border: 5px solid red;*/
+	box-sizing: border-box;
+	align-self: flex-end;
+	max-height: calc(100vh - 160px);
+	min-height: calc(100vh - 160px);
+	overflow-y: scroll;
+	-webkit-overflow-scrolling:touch;
+	padding: 0 10px;
+	background-color: #eceff1;
+	max-width: 500px;
+	margin: auto;
+}
+
+.messages::-webkit-scrollbar {
+    width: 0.4em;
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+  background-color: #eceff1;
+}
+
+/* ----------------------------
+	MESSAGE
+---------------------------- */
+
+.message {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.message > * {
+	padding: 5px 10px;
+	max-width: 75%;
+	border-radius: 5px;
+	margin: 10px 0;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.not-user-message {
+	background-color: #ffffff;
+	align-self: flex-start;
+	position: relative;
+}
+
+.not-user-message:after {
+	content: '';
+	position: absolute;
+	top: -7px;
+	left: 10px;
+	width: 0;
+	border-width: 0 10px 7px 0;
+	border-style: solid;
+	border-color: #ffffff transparent;
+}
+
+.user-message {
+	background-color: #2196F3;
+	color: #fff;
+	align-self: flex-end;
+	position: relative;
+}
+
+.user-message:after {
+	content: '';
+	position: absolute;
+	bottom: -7px;
+	right: 10px;
+	width: 0;
+	border-width: 7px 0 0 10px;
+	border-style: solid;
+	border-color: #2196F3 transparent;
+}
+
+.user-message .time{
+	display: inline-block;
+	padding-right : 20px;
+	font-size: 12px;
+	font-style: italic;
+	opacity: 0.7;
+}
+
+.not-user-message .time{
+	display: inline-block;
+	padding-left : 12px;
+	font-size: 14px;
+	font-style: italic;
+	opacity: 0.5;
+}
+
+.image {
+	margin-top: 5px;
+	border-radius: 5px;
+	width: 240px;
+}
+
+/* ----------------------------
+	FORMULAIRE
+---------------------------- */
+
+.chatForm {
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.20);
+	z-index: 100;
+}
+
+.form {
+	align-self: flex-end;
+}
+
+.form > * {
+	width: 100%;
+}
+
+textarea {
+	box-sizing: border-box;
+	height: 100px;
+	border: 5px solid #2196F3;
+	border-width: 0 0 5px 0;
+	background-color: #ECEFF1;
+	outline: none;
+	font-size: 20px;
+	padding: 5px 10px;
+	width : 100%;
+}
+
+.info {
+	text-align: right;
+	padding : 10px 7px 0 0;
+}
+
+.preview {
+	padding:  5px;
+}
+
+.preview img {
+	border-radius: 5px;
+	width: 40px;
+}
+
+button {
+	font-size: 20px;
+	border: none;
+	color: white;
+	background-color: #2196F3;
+	margin-top: 10px;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+button:disabled {
+	background-color: #eceff1;
+	cursor:not-allowed;
+	color: white;
+}
+
+.button-form {
+	width: 40px !important;
+	height: 40px !important;
+}
+
+.send-button-bloc {
+	float: right;
+	margin: 0 5px;
+}
+
+/* ----------------------------
+	NotFound
+---------------------------- */
+
+.notFound {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	background: #eceff1;
+}
+
+
+/* ----------------------------
+	ANIMATION
+---------------------------- */
+
+.fade-enter {
+	opacity : 0.01;
+	transform: scale(0.1) translate(-50%);
+}
+
+.fade-enter-active {
+	opacity : 1;
+	transition: all 1000ms ease;
+	transform: scale(1) translate(0%);
+}
+
+
+.fade-exit {
+	opacity : 1;
+	transform: scale(1) translate(0%);
+}
+
+.fade-exit-active {
+	opacity : 0;
+	transition: all 1000ms ease;
+	transform: scale(0.1) translate(-50%);
+}
+
+/* ----------------------------
+	Upload File Custum input
+---------------------------- */
+
+.custom-file {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 0;
+}
+
+.custom-file .custom-file-input {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: calc(2.25rem + 14px);
+	margin: 0;
+	opacity: 0;
+	overflow: visible;
+}
+
+.custom-file .custom-file-label {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	left: 5px;
+	z-index: 1;
+	height: calc(2.25rem + 2px);
+	padding: .375rem .75rem;
+	line-height: 1.5;
+}
