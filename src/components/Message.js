@@ -10,24 +10,24 @@ const Message = (props) => {
 
     if (message.image) {
         imagePath = (
-            <img src={message.image} alt={message.time} className="image" />
+            <div className="container-img"><img src={message.image} alt={message.time} className="image" /></div>
         )
     }
 
     if (isUser(message.username)) {
         return (
-                <p className="user-message">
+                <div className="user-message">
                     <span className="time">{moment(message.time).format('H:mm')}</span>{message.message}
-                    <br />{imagePath}
-                </p>
+                    {imagePath}
+                </div>
         )
     }
     else {
         return (
-                <p className="not-user-message">
+                <div className="not-user-message">
                     <strong>{message.username}</strong> : {message.message} <span className="time">{moment(message.time).format('H:mm')}</span>
-                    <br />{imagePath}
-                </p>
+                    {imagePath}
+                </div>
         )
     }
 }

@@ -4,6 +4,7 @@ import Message from "./components/Message";
 
 import 'antd/dist/antd.css'
 import './App.css'
+import './index.css'
 
 // firebase
 import base from './base'

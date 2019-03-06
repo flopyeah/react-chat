@@ -93,8 +93,11 @@ class Formulaire extends Component {
         if (this.state.image){
             this.uploadImage()
         }
-        else {
+        else if (this.state.message){
             this.createMessage()
+        }
+        else {
+            this.setState({ icon: 'caret-right' });
         }
     }
 
@@ -128,7 +131,7 @@ class Formulaire extends Component {
 
         if (this.state.imagePreview ) {
             imagePreview = (
-                <img src={this.state.imagePreview} width="50" alt="preview" />
+                <img src={this.state.imagePreview} alt="preview" />
             )
         }
 
@@ -139,11 +142,13 @@ class Formulaire extends Component {
                     <div>
                         <Row>
                             <Col span={3}>
-                                <div className="custom-file">
-                                    <input type="file" className="custom-file-input" id="customFile"  onChange={this.handleUpload} />
-                                    <Button type="primary" className="button-form custom-file-label" icon="picture" />
+                                <div className="send-button-bloc">
+                                    <div className="custom-file">
+                                        <input type="file" className="custom-file-input" id="customFile"  onChange={this.handleUpload} />
+                                        <Button type="primary" className="button-form custom-file-label" icon="picture" />
+                                    </div>
+                                    <div className="preview">{imagePreview}</div>
                                 </div>
-                                <div className="preview">{imagePreview}</div>
                             </Col>
                             <Col span={18}>
 
@@ -156,7 +161,7 @@ class Formulaire extends Component {
                             </Col>
                             <Col span={3}>
                                 <div className="send-button-bloc">
-                                    <Button type="primary" className="button-form" onClick={this.handleSubmit} icon={this.state.icon} style={{marginTop : 10}} />
+                                    <Button type="primary" className="button-form" onClick={this.handleSubmit} icon={this.state.icon} />
                                     <div className="info" >{this.state.length}</div>
                                 </div>
                             </Col>
